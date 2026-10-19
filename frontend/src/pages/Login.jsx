@@ -16,7 +16,7 @@ function Login() {
     try {
       // YAHAN NAYA VERCEL URL LAGA HAI
       const res = await axios.post(
-        'https://mern-auth-api-two.vercel.app/api/auth/send-otp',
+        'https://mern-auth-app-henna.vercel.app/api/auth/send-otp',
         { email }
       );
       setMessage('✅ OTP bhej diya gaya!');
