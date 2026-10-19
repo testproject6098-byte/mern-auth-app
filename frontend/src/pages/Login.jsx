@@ -14,8 +14,9 @@ function Login() {
     setMessage('');
 
     try {
+      // YAHAN CHANGE KIYA HAI (localhost ki jagah Vercel URL)
       const res = await axios.post(
-        'http://localhost:5000/api/auth/send-otp',
+        'https://mern-auth-backend-ituwffnkh-nadirali.vercel.app/api/auth/send-otp',
         { email }
       );
       setMessage('✅ OTP bhej diya gaya!');
