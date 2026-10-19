@@ -8,7 +8,18 @@ const connectDB = require('../config/db');
 const authRoutes = require('../routes/authRoutes');
 
 const app = express();
-app.use(cors());
+
+// YAHAN CORS KI SETTING THEEK KI GAYI HAI
+app.use(cors({
+  origin: [
+    "https://mern-auth-frontend-live.vercel.app",
+    "https://mern-auth-app-henna.vercel.app",
+    "http://localhost:5173"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.use(express.json());
 
 connectDB();
