@@ -18,7 +18,7 @@ function VerifyOtp() {
     try {
       // YAHAN BHI NAYA VERCEL URL LAGA HAI
       const res = await axios.post(
-        'https://mern-auth-app-henna.vercel.app/api/auth/verify-otp',
+      'https://mern-auth-api-two.vercel.app/api/auth/verify-otp',
         { email, otp }
       );
       localStorage.setItem('token', res.data.token);
