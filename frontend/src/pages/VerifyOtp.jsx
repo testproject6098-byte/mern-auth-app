@@ -16,11 +16,11 @@ function VerifyOtp() {
     setMessage('');
 
     try {
+      // YAHAN BHI NAYA VERCEL URL LAGA HAI
       const res = await axios.post(
-        'http://localhost:5000/api/auth/verify-otp',
+        'https://mern-auth-api-two.vercel.app/api/auth/verify-otp',
         { email, otp }
       );
-      // Token save karo
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       setMessage('✅ Login successful!');

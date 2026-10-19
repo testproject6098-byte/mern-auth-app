@@ -14,13 +14,12 @@ function Login() {
     setMessage('');
 
     try {
-      // YAHAN CHANGE KIYA HAI (localhost ki jagah Vercel URL)
+      // YAHAN NAYA VERCEL URL LAGA HAI
       const res = await axios.post(
-        'https://mern-auth-backend-ituwffnkh-nadirali.vercel.app/api/auth/send-otp',
+        'https://mern-auth-api-two.vercel.app/api/auth/send-otp',
         { email }
       );
       setMessage('✅ OTP bhej diya gaya!');
-      // OTP page par jao
       setTimeout(() => {
         navigate('/verify-otp', { state: { email } });
       }, 1000);
@@ -47,11 +46,7 @@ function Login() {
             style={styles.input}
           />
 
-          <button
-            type="submit"
-            disabled={loading}
-            style={styles.button}
-          >
+          <button type="submit" disabled={loading} style={styles.button}>
             {loading ? 'Bhej rahe hain...' : 'OTP Bhejein'}
           </button>
         </form>
